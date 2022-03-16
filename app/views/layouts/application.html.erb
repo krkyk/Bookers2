@@ -11,34 +11,46 @@
   </head>
 
   <body>
-    <header>
-      <%if user_signed_in?%>
-      <li>
-        <%=link_to"Home",root_path%>
-      </li>
-      <li>
-        <%=link_to"Users",new_user_session_path%>
-      </li>
-      <li>
-        <%=link_to"Books",root_path%>
-      </li>
-      <li>
-        <%=link_to"Log out",destroy_user_session_path,method: :delete%>
-      </li>
-      <%else%>
-      <li>
-        <%=link_to"Home",root_path%>
-      </li>
-      <li>
-        <%=link_to"About",about_path%>
-      </li>
-      <li>
-        <%=link_to"Sign up",new_user_registration_path%>
-      </li>
-      <li>
-        <%=link_to"Log in",new_user_session_path%>
-      </li>
-      <%end%>
+    <header class="bg-dark text-light">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand text-light" href="/">Bookers</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <%if user_signed_in?%>
+              <li class="nav-item">
+                <%=link_to(root_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-house-chimney"></i> Home</span><%end%>
+              </li>
+              <li class="nav-item">
+                <%=link_to(new_user_session_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-users"></i> Users</span><%end%>
+              </li>
+              <li class="nav-item">
+                <%=link_to(root_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-book-open"></i> Books</span><%end%>
+              </li>
+              <li class="nav-item">
+                <%=link_to(destroy_user_session_path,method: :delete,class:"nav-link text-light")do%><span><i class="fa-solid fa-right-from-bracket"></i> Log out</span><%end%>
+              </li>
+              <%else%>
+              <li class="nav-item">
+                <%=link_to(root_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-house-chimney"></i> Home</span><%end%>
+              </li>
+              <li class="nav-item">
+                <%=link_to(about_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-link"></i> About</span><%end%>
+              </li>
+              <li class="nav-item">
+                <%=link_to(new_user_registration_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-user-plus"></i> Sign up</span><%end%>
+              </li>
+              <li class="nav-item">
+                <%=link_to(new_user_session_path,class:"nav-link text-light")do%><span><i class="fa-solid fa-right-to-bracket"></i> Log in</span><%end%>
+              </li>
+              <%end%>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <%= yield %>
   </body>
