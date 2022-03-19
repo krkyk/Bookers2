@@ -1,3 +1,4 @@
+<%=render"layouts/notifications"%>
 <div class="container">
   <div class="row">
     <div class="mt-2 mx-auto col-sm-10 col-lg-8 col-xl-6">
@@ -8,7 +9,7 @@
 
       <div class="btn-wrapper col-10 mx-auto">
         <div class="row">
-          <%=link_to(user_session_path,class:"btn btn-info btn-sm btn-block mb-3")do%>Log in<%end%>
+          <%=link_to(user_session_path,method: :post,class:"btn btn-info btn-sm btn-block mb-3")do%>Log in<%end%>
         </div>
         <div class="row">
           <%=link_to(new_user_registration_path,class:"btn btn-success btn-sm btn-block")do%>sign up<%end%>

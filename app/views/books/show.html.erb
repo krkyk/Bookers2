@@ -1,2 +1,69 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3 mt-3">
+      <h2>User info</h2>
+      <%=image_tag @user.get_profile_image(60,60)%>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <th><%=@user.name%></th>
+          </tr>
+          <th>introduction</th>
+          <th><%=@user.introduction%></th>
+        </tbody>
+      </table>
+      <div class="row">
+        <%=link_to(edit_user_path,class:"btn btn-outline-secondary btn-block")do%><span><i class="fa-solid fa-user-gear"></i></span><%end%>
+      </div>
+      <h2 class="mt-3">New book</h2>
+      <%=form_with model: @book, local: true do |f|%>
+      <div class="field">
+       <%=f.label :Title%> <br>
+       <%=f.text_field :title%>
+      </div>
+      <div class="field mt-2">
+        <%=f.label :Option%><br>
+        <%=f.text_area :body%>
+      </div>
+      <div class="action">
+        <%=f.submit"Create Book",class:"btn btn-success btn-sm mt-2"%>
+      </div>
+      <%end%>
+      </div>
+
+      <div class="mt-3 col-md-8 offset-md-1">
+        <h2>Book detail</h2>
+        <table class="table table-hover table-inverse">
+          <tbody>
+            <tr>
+              <td>
+                <%=image_tag @book1.user.get_profile_image(40,40)%><br>
+                <%=link_to @book1.user.name,user_path(@book1.user.id)%>
+              </td>
+              <td>
+                <%=link_to @book1.title, book_path(@book1.id)%>
+              </td>
+              <td><%= @book1.body%></td>
+              <td>
+                <%=link_to "Edit",edit_book_path(@book1.id),class:"btn btn-success btn-sm"%>
+              </td>
+              <td>
+                <%=link_to "Destroy",book_path(@book1.id),method: :delete,"data-confirm"=>"本当に消しますか？",class:"btn btn-danger btn-sm"%>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
