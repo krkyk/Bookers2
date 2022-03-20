@@ -15,7 +15,7 @@
         </tbody>
       </table>
       <div class="row">
-        <%=link_to(edit_user_path,class:"btn btn-outline-secondary btn-block")do%><span><i class="fa-solid fa-user-gear"></i></span><%end%>
+        <%=link_to(edit_user_path(@user.id),class:"btn btn-outline-secondary btn-block")do%><i class="fa-solid fa-user-gear"></i><%end%>
       </div>
       <h2 class="mt-3">New book</h2>
       <%=form_with model: @book, local: true do |f|%>
@@ -46,12 +46,14 @@
                 <%=link_to @book1.title, book_path(@book1.id)%>
               </td>
               <td><%= @book1.body%></td>
+              <%if @book1.user==current_user%>
               <td>
                 <%=link_to "Edit",edit_book_path(@book1.id),class:"btn btn-success btn-sm"%>
               </td>
               <td>
                 <%=link_to "Destroy",book_path(@book1.id),method: :delete,"data-confirm"=>"本当に消しますか？",class:"btn btn-danger btn-sm"%>
               </td>
+              <%end%>
             </tr>
           </tbody>
         </table>

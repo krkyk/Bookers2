@@ -15,7 +15,7 @@
         </tbody>
       </table>
       <div class="row">
-        <%=link_to(edit_user_path,class:"btn btn-outline-secondary btn-block")do%><i class="fa-solid fa-user-gear"></i><%end%>
+        <%=link_to(edit_user_path(@user.id),class:"btn btn-outline-secondary btn-block")do%><i class="fa-solid fa-user-gear"></i><%end%>
       </div>
       <h2 class="mt-3">New book</h2>
       <%=form_with model:@book, local: true do |f|%>
