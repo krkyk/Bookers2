@@ -1,7 +1,7 @@
 # Bookers2
 
-DMMWEBCAMP課題３です。
+DMM　WEBCAMPアプリケーションを作成しようの課題３です。
 
 # Usage
 
-HTML/CSSで実行できます。
+HTML/CSSファイルのため、PCのブラウザで実行できます。
