@@ -1,12 +1,12 @@
 <div class="container px-5 px-sm-0">
-  <%#if @book.errors.any?%>
-  <%#=@book.errors.count%>error prohibited this obj from<br>being saved:
-  <!--<ul>-->
-    <%#=@book.error.full_messages.each do |message|%>
-    <li><%#=message%></li>
-    <%#end%>
-  <!--</ul>-->
-  <%#end%>
+  <%if @book.errors.any?%>
+  <h3><%=@book.errors.count%>error prohibited this obj from being saved:</h3>
+  <ul>
+    <%@book.errors.full_messages.each do |message|%>
+    <li><%=message%></li>
+    <%end%>
+  </ul>
+  <%end%>
   <div class="row">
     <div class="col-md-3 mt-3">
       <h2>User info</h2>
