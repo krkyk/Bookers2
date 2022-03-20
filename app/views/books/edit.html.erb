@@ -13,13 +13,13 @@
       <%=form_with model: @book,local: true do |f|%>
       <div class="form-group">
         <%=f.label :Title%><br>
-        <%=f.text_field :title, autofocus: true%>
+        <%=f.text_field :title, autofocus: true,class:"form-control book_title"%>
       </div>
       <div class="form-group">
-        <%=f.label :Option%><br>
-        <%=f.text_area :body%>
+        <%=f.label :Opinion%><br>
+        <%=f.text_area :body,class:"form-control book_body"%>
       </div>
-      <div class="action">
+      <div class="form-group">
         <%=f.submit"Update Book",class:"btn btn-success btn-sm mb-2"%>
       </div>
       <%end%>
