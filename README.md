@@ -1,6 +1,6 @@
 # Bookers2
 
-DMM　WEBCAMPアプリケーションを作成しようの課題３です。
+DMMWEBCAMPアプリケーションを作成しようの課題３です。
 
 # Usage
 
